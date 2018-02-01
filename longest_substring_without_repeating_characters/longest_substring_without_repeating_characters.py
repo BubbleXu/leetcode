@@ -20,16 +20,13 @@ class Solution(object):
         begin, end = 0, 0
         result = 0
         for i in range(len(s)):
-            if dict.get(s[i]) is None:
-                dict[s[i]] = i
-                end += 1
-            else:
+            if dict.get(s[i]) is not None:
                 result = max(result, end - begin)
                 while begin <= dict.get(s[i]):
                     dict.pop(s[begin])
                     begin += 1
-                dict[s[i]] = i
-                end += 1
+            dict[s[i]] = i
+            end += 1
         return max(result, end - begin)
 
 
