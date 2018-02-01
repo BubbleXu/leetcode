@@ -19,15 +19,14 @@ class Solution(object):
         dict = {}
         begin, end = 0, 0
         result = 0
-        for i in range(len(s)):
-            if dict.get(s[i]) is not None:
-                result = max(result, end - begin)
-                while begin <= dict.get(s[i]):
-                    dict.pop(s[begin])
-                    begin += 1
-            dict[s[i]] = i
-            end += 1
-        return max(result, end - begin)
+        for end in range(len(s)):
+            if dict.get(s[end]) is not None:
+                begin = max(dict.get(s[end]), begin)
+
+            result = max(result, end - begin + 1)
+            dict[s[end]] = end + 1
+
+        return result
 
 
 if __name__ == '__main__':
