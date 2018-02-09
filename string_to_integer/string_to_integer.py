@@ -28,6 +28,7 @@ class Solution(object):
             sign = 1 - 2 * (str[i] == '-')
             i += 1
 
+        # max_int = 2^31 -1, min_int = -max_int - 1
         while i < n and ord('0') <= ord(str[i]) <= ord('9'):
             cur = int(str[i])
             if result > 214748364 or (result == 214748364 and cur > 7):
