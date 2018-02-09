@@ -27,13 +27,20 @@ class Solution(object):
             return (self.find_k(nums1, nums2, total_len / 2) + self.find_k(nums1, nums2, total_len / 2 + 1)) / 2.0
 
     def find_k(self, A, B, k):
-        la, lb, pa, pb = len(A), len(B), min(k / 2, len(A)), k - min(k / 2, len(A))
+        la = len(A)
+        lb = len(B)
+        pa = min(k / 2, la)
+        pb = k - pa
+
         if la > lb:
             return self.find_k(B, A, k)
+
         if la == 0:
             return B[k - 1]
+
         if k == 1:
             return min(A[0], B[0])
+
         if A[pa - 1] < B[pb - 1]:
             return self.find_k(A[pa:], B, k - pa)
         elif A[pa - 1] > B[pb - 1]:
