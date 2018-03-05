@@ -33,8 +33,6 @@ class Solution(object):
             self.generate(n_left, n_right - 1, s + ')', result)
 
 
-
-
 if __name__ == '__main__':
     solution = Solution()
     print solution.generate_parenthesis(3)
