@@ -38,4 +38,4 @@ class Solution(object):
 
 if __name__ == '__main__':
     solution = Solution()
-    print solution.is_match('', 'a*')
+    print solution.is_match('aab', 'c*a*b')
