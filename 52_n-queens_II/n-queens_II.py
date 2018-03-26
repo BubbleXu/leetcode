@@ -25,6 +25,7 @@ class Solution(object):
             if q not in cur_result and p - q not in xy_dif and p + q not in xy_sum:
                 self.solve2(cur_result + [q], xy_dif + [p - q], xy_sum + [p + q], n)
 
+
 if __name__ == '__main__':
     solution = Solution()
     print solution.total_n_queens(4)
