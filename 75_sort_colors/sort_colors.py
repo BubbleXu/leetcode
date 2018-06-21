@@ -36,6 +36,6 @@ class Solution(object):
 
 if __name__ == '__main__':
     solution = Solution()
-    nums = [0, 2, 1]
+    nums = [2,3,7,0,2,4,5,5,18]
     solution.sort_colors(nums)
     print nums
