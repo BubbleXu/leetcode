@@ -20,6 +20,6 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    nums = [2, 7, 11, 15]
+    nums = [2, 7, 11, 16]
     target = 9
     print solution.two_sum(nums, target)
